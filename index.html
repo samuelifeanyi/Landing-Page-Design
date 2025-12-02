@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>embedsocial</title>
+</head>
+ <!-- Header Section -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                
+                <!-- Left Side: Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <!-- Icon Box -->
+                    <div class="bg-black text-white p-1 rounded-md flex items-center justify-center w-7 h-7">
+                        <img src="./assets/Logo.png" alt="">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                        </svg>
+                    </div>
+                    <!-- Brand Name -->
+                    <span class="font-bold text-gray-900 text-lg tracking-tight">embedsocial</span>
+                </div>
+
+                <!-- Center: Navigation (Hidden on Mobile) -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <!-- Dropdown Item -->
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-gray-900 font-medium text-sm flex items-center gap-1 focus:outline-none">
+                            Platform
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-transform duration-200 group-hover:rotate-180">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <a href="#" class="text-gray-600 hover:text-gray-900 font-medium text-sm">Widgets</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 font-medium text-sm">Templates</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 font-medium text-sm">Pricing</a>
+                </nav>
+
+                <!-- Right Side: Actions (Hidden on Mobile) -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-gray-900 font-medium text-sm">
+                        Login
+                    </a>
+                    <a href="#" class="bg-[#0066FF] hover:bg-blue-700 text-white px-5 py-2 rounded-md text-sm font-semibold transition duration-200 shadow-sm">
+                        Start Free Trial
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button (Visible on Mobile) -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-16 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Platform</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Widgets</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Templates</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Pricing</a>
+                <div class="border-t border-gray-100 my-2 pt-2">
+                    <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Login</a>
+                    <a href="#" class="block w-full text-center mt-2 bg-[#0066FF] hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<body class="bg-white text-gray-900">
+     <section class="relative pt-16 pb-12 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left Column: Content -->
+                <div class="max-w-2xl">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6">
+                        Display Instagram Stories on any website, 
+                        <span class="bg-[#FFEB3B] px-1 inline-block transform -rotate-1">in seconds.</span>
+                    </h1>
+                    
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Display Instagram Stories Widget on your website, that auto-syncs, and updates each time you add a photo in your active story.
+                    </p>
+
+                    <!-- Form -->
+                    <div class="flex flex-col sm:flex-row gap-3 max-w-md mb-4">
+                        <input type="email" placeholder="Enter your email..." class="flex-1 appearance-none border border-gray-300 rounded-md py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm">
+                        <button class="bg-[#0066FF] hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-200 flex items-center justify-center whitespace-nowrap shadow-md">
+                            Start Free Trial
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Trust Text -->
+                    <div class="font-black text-gray-500 flex items-center gap-2">
+                        <span>Free 7-day trial</span>
+                        <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                        <span>Easy setup</span>
+                        <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                        <span>Cancel any time</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visuals (The tricky part) -->
+                <div class="relative mt-10 lg:mt-0 flex justify-center lg:justify-end">
+                    
+                    <!-- Floating Instagram Icon (Absolute Positioned) -->
+                    <div class="absolute bottom-20 -left-6 z-20 bg-white p-3 rounded-2xl shadow-xl hidden sm:block">
+                        <div class="w-12 h-12 rounded-xl insta-gradient flex items-center justify-center text-white">
+                            <img class="ml-54" src="./assets/Instagram.png" alt="">
+                            <svg class="ml-54" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 items-center">
+                        <!-- Main Story Card -->
+                        <div class="relative w-64 md:w-72 h-[450px] bg-gray-100 rounded-3xl overflow-hidden shadow-2xl flex-shrink-0 border-4 border-white">
+                            <!-- Story Progress Bar -->
+                            <div class="absolute top-4 left-0 w-full px-3 flex gap-1 z-20">
+                                <div class="h-1 bg-white/80 flex-1 rounded-full"></div>
+                                <div class="h-1 bg-white/40 flex-1 rounded-full"></div>
+                            </div>
+                            
+                            <!-- Profile Bubble -->
+                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-sm px-3 m py-2 rounded-full z-20 flex items-center gap-2 shadow-sm text-xs font-semibold w-[90%]">
+                                <img src="./assets/Group 878.png" alt="profile">
+                                <div class="flex flex-col leading-none">
+                                    <span class="text-gray-900 mb-2 text-[16.13px] font-bold">escommerce</span>
+                                    <span class="text-[10px] text-gray-500 font-normal flex gap-1">1h ago <img src="./assets/Line 46.png" alt=""> <img src="./assets/Group 335 (1).png" alt=""> by EmbedSocial</span>
+                                </div>
+                            </div>
+
+                            <!-- Main Image -->
+                            <img src="./assets/Rectangle 28.png" class="w-full h-full object-cover" alt="Woman in yellow">
+                        </div>
+
+                        <!-- Side Column (Smaller cards) -->
+                        <div class="flex flex-col gap-4 hidden md:flex">
+                            <!-- Top Card -->
+                            <div class="w-40 h-52 bg-green-100 rounded-2xl overflow-hidden shadow-lg border-2 border-white relative">
+                                <div class="absolute top-2 left-2 w-6 h-6 rounded-full flex items-center justify-center text-white text-[10px]">
+                                    <img src="./assets/Group 898.png" class="w-full h-full rounded-full opacity-80" alt="sm-profile">
+                                </div>
+                                <img src="./assets/Group 1498.png" class="w-full h-full object-cover" alt="Pumpkin">
+                            </div>
+                            <!-- Bottom Card -->
+                            <div class="w-40 h-52 bg-green-100 rounded-2xl overflow-hidden shadow-lg border-2 border-white relative">
+                                <div class="absolute top-2 left-2 w-6 h-6 p-0.5">
+                                </div>
+                                <img src="./assets/Frame 949.png" class="w-full h-full object-cover" alt="Avocados">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trusted By Section -->
+            <div class="mt-20 border-t border-gray-100 pt-10">
+                <p class="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
+                    Join 50,000+ websites that use EmbedSocial to sell more
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+                    <!-- CNN Logo Placeholder -->
+                    <span class="text-2xl font-black text-gray-800"><img src="./assets/cnn.svg" alt=""></span>
+                    
+                    <!-- National Geographic Placeholder -->
+                    <div class="flex items-center gap-1 font-serif text-sm font-bold border-l-4 border-yellow-400 pl-1 leading-none">
+                        <img src="./assets/netgeo.svg" alt="">
+                    </div>
+
+                    <!-- Florence Placeholder -->
+                    <span class="text-xl font-serif italic text-gray-800"><img src="./assets/florencebymills-logo 1.png" alt=""></span>
+
+                    <!-- Ancestry Placeholder -->
+                    <span class="text-xl font-serif text-gray-800"><img src="./assets/ancestry-logo 1.png" alt=""></span>
+                   
+                    <!-- Industrious Placeholder -->
+                    <span class="text-xl font-serif text-gray-800"><img src="./assets/industrious 1.png" alt=""></span>
+
+                    <!-- Nike Placeholder -->
+                     <span class="text-xl font-serif text-gray-800"><img src="./assets/nike.svg" alt=""></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <!-- LEFT COLUMN: Browser Mockup -->
+            <div class="lg:col-span-8 order-2 lg:order-1">
+                <div class="bg-white rounded-xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-100 overflow-hidden transform transition-transform hover:scale-[1.01] duration-500">
+                    
+                    <!-- Browser Window Header -->
+                    <div class="bg-[#1A1A1A] px-4 py-3 flex items-center gap-2">
+                        <div class="w-2.5 h-2.5 rounded-full bg-white"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-white"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-white"></div>
+                    </div>
+
+                    <!-- Mockup Content Area -->
+                    <div class="p-6 md:p-8 bg-white relative">
+                        
+                        <!-- Pseudo-Hero Section with Fruits -->
+                        <div class="relative flex flex-col items-center justify-center mb-10 h-48">
+                            <!-- Floating Fruits (Absolute) -->
+                            <img src="./assets/watermelon.png" class="absolute top-0 left-0 w-24 md:w-32 transform -rotate-12 opacity-90" alt="Watermelon">
+                            <img src="https://images.unsplash.com/photo-1591796079433-7f41b45eb95c?auto=format&fit=crop&w=100&q=80" class="absolute top-2 right-10 w-16 md:w-20 rounded-full opacity-90" alt="Kiwi">
+                            <img src="https://images.unsplash.com/photo-1615485925763-867862f8021a?auto=format&fit=crop&w=100&q=80" class="absolute bottom-0 right-0 w-20 md:w-24 transform rotate-12 opacity-90" alt="Lemon">
+                            
+                            <!-- Hero Text -->
+                            <div class="text-center z-10 bg-white/80 backdrop-blur-sm p-4 rounded-xl">
+                                <p class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-1">Foodie</p>
+                                <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-2">Try the best recipes</h2>
+                                <p class="text-xs text-gray-500">Easy recipes and cooking hacks</p>
+                                <button class="mt-4 bg-black text-white text-xs font-bold py-2 px-4 rounded-full">View all recipes</button>
+                            </div>
+                        </div>
+
+                        <!-- Widget Header -->
+                        <div class="flex justify-between items-end mb-4 border-b border-gray-100 pb-2">
+                            <h3 class="font-bold text-gray-800 text-sm">Trending Recipes</h3>
+                            <span class="text-[10px] font-bold bg-black text-white px-1.5 py-0.5 rounded"># Stories</span>
+                        </div>
+
+                        <!-- The Carousel Grid -->
+                        <div class="flex gap-3 overflow-x-auto no-scrollbar pb-2">
+                            
+                            <!-- Card 1 -->
+                            <div class="relative flex-shrink-0 w-28 h-44 md:w-32 md:h-48 rounded-lg overflow-hidden group cursor-pointer">
+                                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Pizza">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-2 left-2 flex items-center gap-1 text-white">
+                                    <span class="text-[10px] font-bold">18 sec</span>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="relative flex-shrink-0 w-28 h-44 md:w-32 md:h-48 rounded-lg overflow-hidden group cursor-pointer">
+                                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Pumpkin">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-2 left-2 flex items-center gap-1 text-white">
+                                    <span class="text-[10px] font-bold">22 sec</span>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="relative flex-shrink-0 w-28 h-44 md:w-32 md:h-48 rounded-lg overflow-hidden group cursor-pointer">
+                                <img src="https://images.unsplash.com/photo-1601039641847-7857b994d704?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Avocado">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-2 left-2 flex items-center gap-1 text-white">
+                                    <span class="text-[10px] font-bold">1m</span>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="relative flex-shrink-0 w-28 h-44 md:w-32 md:h-48 rounded-lg overflow-hidden group cursor-pointer">
+                                <img src="https://images.unsplash.com/photo-1574484284008-86d47dc69c0b?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Chips">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-2 left-2 flex items-center gap-1 text-white">
+                                    <span class="text-[10px] font-bold">45 sec</span>
+                                </div>
+                            </div>
+
+                             <!-- Card 5 -->
+                             <div class="relative flex-shrink-0 w-28 h-44 md:w-32 md:h-48 rounded-lg overflow-hidden group cursor-pointer">
+                                <img src="https://images.unsplash.com/photo-1623341214825-9f4f963727da?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Ramen">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-2 left-2 flex items-center gap-1 text-white">
+                                    <span class="text-[10px] font-bold">12 sec</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Navigation Menu -->
+            <div class="lg:col-span-4 order-1 lg:order-2">
+                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8 leading-tight">
+                    Widgets for <br> every website.
+                </h1>
+
+                <div class="space-y-2">
+                    <!-- Option 1: Highlights -->
+                    <div class="group flex items-center gap-4 p-3 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="opacity-50"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+                        <span class="font-medium text-lg">Highlights</span>
+                    </div>
+
+                    <!-- Option 2: Popover -->
+                    <div class="group flex items-center gap-4 p-3 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="opacity-50"><path d="M4 6h16v12H4z"/><path d="M16 2v4h4V2h-4z"/></svg>
+                        <span class="font-medium text-lg">Popover</span>
+                    </div>
+
+                    <!-- Option 3: Inline slideshow -->
+                    <div class="group flex items-center gap-4 p-3 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="opacity-50"><path d="M4 6h4v12H4zM10 6h4v12h-4zM16 6h4v12h-4z"/></svg>
+                        <span class="font-medium text-lg">Inline slideshow</span>
+                    </div>
+
+                    <!-- Option 4: Story list gallery -->
+                    <div class="group flex items-center gap-4 p-3 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="opacity-50"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+                        <span class="font-medium text-lg">Story list gallery</span>
+                    </div>
+
+                    <!-- Option 5: Carousel gallery (ACTIVE) -->
+                    <div class="group flex items-center gap-4 p-4 rounded-lg bg-[#F0F5FF] text-[#0066FF] transition-colors cursor-pointer shadow-sm">
+                        <div class="bg-[#0066FF] text-white p-1 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 19h10V4H7v15zm-5-2h4V6H2v11zM18 6v11h4V6h-4z"/></svg>
+                        </div>
+                        <span class="font-bold text-lg">Carousel gallery</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+     <!-- Simple Script for Mobile Menu Toggle -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
